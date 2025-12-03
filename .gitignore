@@ -26,7 +26,7 @@ pids
 *.sqlite
 *.sqlite3
 /data/
-/db/
+
 *.dump
 *.sql
 

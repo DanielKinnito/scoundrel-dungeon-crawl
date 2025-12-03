@@ -1,30 +1,68 @@
-# Solo dungeon crawl
+# Scoundrel Solo Dungeon Crawl
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A dark, atmospheric dungeon crawler game built with Next.js, Tailwind CSS, and Supabase.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/kinnitos-projects/v0-solo-dungeon-crawl)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/d7RPpGU7udO)
+## Features
 
-## Overview
+- **Immersive Gameplay**: Experience a realistic dungeon crawl with dynamic lighting and sound effects.
+- **Leaderboard**: Compete with other players for the top score.
+- **Authentication**: Secure login and signup powered by Better-Auth.
+- **Responsive Design**: Play on desktop or mobile.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Tech Stack
 
-## Deployment
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Database**: [Supabase](https://supabase.com/) (PostgreSQL)
+- **ORM**: [Drizzle ORM](https://orm.drizzle.team/)
+- **Authentication**: [Better-Auth](https://better-auth.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-Your project is live at:
+## Getting Started
 
-**[https://vercel.com/kinnitos-projects/v0-solo-dungeon-crawl](https://vercel.com/kinnitos-projects/v0-solo-dungeon-crawl)**
+### Prerequisites
 
-## Build your app
+- Node.js 18+
+- PostgreSQL Database (Supabase recommended)
 
-Continue building your app on:
+### Installation
 
-**[https://v0.app/chat/d7RPpGU7udO](https://v0.app/chat/d7RPpGU7udO)**
+1. Clone the repository:
 
-## How It Works
+   ```bash
+   git clone <your-repo-url>
+   cd scoundrel-solo-dungeon-crawl
+   ```
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add the following:
+
+   ```env
+   DATABASE_URL=postgresql://postgres:[PASSWORD]@[HOST]:[PORT]/postgres
+   BETTER_AUTH_SECRET=your_random_secret
+   NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+   ```
+
+4. Push the database schema:
+
+   ```bash
+   npx drizzle-kit push
+   ```
+
+5. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## License
+
+This project is licensed under the MIT License.
