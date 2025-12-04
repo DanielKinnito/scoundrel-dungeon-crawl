@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Skull, Trophy, BookOpen, Flame, Infinity } from "lucide-react"
 import { DungeonBackground } from "./dungeon-background"
-import type { GameMode } from "@/app/page"
+import type { GameMode } from "@/components/game-container"
 
 interface MainMenuProps {
   onStartGame: (mode: GameMode) => void
@@ -46,17 +46,15 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
             onClick={() => onStartGame("realistic")}
             onMouseEnter={() => setHoveredMode("realistic")}
             onMouseLeave={() => setHoveredMode(null)}
-            className={`group relative p-5 sm:p-6 rounded-xl border-2 transition-all duration-300 backdrop-blur-sm ${
-              hoveredMode === "realistic"
-                ? "border-primary bg-primary/15 scale-[1.02]"
-                : "border-border/50 bg-card/30 hover:border-primary/50"
-            }`}
+            className={`group relative p-5 sm:p-6 rounded-xl border-2 transition-all duration-300 backdrop-blur-sm ${hoveredMode === "realistic"
+              ? "border-primary bg-primary/15 scale-[1.02]"
+              : "border-border/50 bg-card/30 hover:border-primary/50"
+              }`}
           >
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div
-                className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 ${
-                  hoveredMode === "realistic" ? "pulse-glow" : ""
-                }`}
+                className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 ${hoveredMode === "realistic" ? "pulse-glow" : ""
+                  }`}
                 style={hoveredMode === "realistic" ? { color: "var(--primary)" } : undefined}
               >
                 <Flame className="w-8 h-8 sm:w-12 sm:h-12 text-primary" />
@@ -75,17 +73,15 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
             onClick={() => onStartGame("endless")}
             onMouseEnter={() => setHoveredMode("endless")}
             onMouseLeave={() => setHoveredMode(null)}
-            className={`group relative p-5 sm:p-6 rounded-xl border-2 transition-all duration-300 backdrop-blur-sm ${
-              hoveredMode === "endless"
-                ? "border-accent bg-accent/15 scale-[1.02]"
-                : "border-border/50 bg-card/30 hover:border-accent/50"
-            }`}
+            className={`group relative p-5 sm:p-6 rounded-xl border-2 transition-all duration-300 backdrop-blur-sm ${hoveredMode === "endless"
+              ? "border-accent bg-accent/15 scale-[1.02]"
+              : "border-border/50 bg-card/30 hover:border-accent/50"
+              }`}
           >
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div
-                className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 ${
-                  hoveredMode === "endless" ? "pulse-glow" : ""
-                }`}
+                className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 ${hoveredMode === "endless" ? "pulse-glow" : ""
+                  }`}
                 style={hoveredMode === "endless" ? { color: "var(--accent)" } : undefined}
               >
                 <Infinity className="w-8 h-8 sm:w-12 sm:h-12 text-accent" />
@@ -107,7 +103,7 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
             variant="outline"
             size="lg"
             onClick={onShowLeaderboard}
-            className="gap-2 border-border/50 hover:border-primary hover:bg-primary/10 bg-card/30 backdrop-blur-sm w-full sm:w-auto"
+            className="gap-2 border-border/50 hover:border-amber-500 hover:bg-amber-500/20 hover:text-amber-500 bg-card/30 backdrop-blur-sm w-full sm:w-auto transition-all duration-300"
           >
             <Trophy className="w-5 h-5" />
             Leaderboard
@@ -116,7 +112,7 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
             variant="outline"
             size="lg"
             onClick={onShowHowTo}
-            className="gap-2 border-border/50 hover:border-primary hover:bg-primary/10 bg-card/30 backdrop-blur-sm w-full sm:w-auto"
+            className="gap-2 border-border/50 hover:border-amber-500 hover:bg-amber-500/20 hover:text-amber-500 bg-card/30 backdrop-blur-sm w-full sm:w-auto transition-all duration-300"
           >
             <BookOpen className="w-5 h-5" />
             How to Play
@@ -124,7 +120,7 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-4 text-center text-xs text-muted-foreground/40">
+        <div className="mt-12 text-center text-sm text-muted-foreground/60 font-medium">
           <p>Based on the card game by Zach Gage & Kurt Bieg</p>
         </div>
       </div>

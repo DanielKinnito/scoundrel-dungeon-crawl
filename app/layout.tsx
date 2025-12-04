@@ -10,7 +10,9 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 export const metadata: Metadata = {
   title: "Scoundrel - Solo Dungeon Crawl",
   description: "A solo dungeon crawl card game. Descend into the depths and survive!",
-    generator: 'v0.app'
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export const viewport: Viewport = {
