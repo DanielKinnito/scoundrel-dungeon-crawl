@@ -21,7 +21,10 @@ export default async function Home() {
         style={{ animationDelay: "0.45s" }}
       />
 
-      <GameContainer leaderboard={<Leaderboard />} />
+      <GameContainer
+        leaderboardRealistic={<Leaderboard mode="realistic" />}
+        leaderboardEndless={<Leaderboard mode="endless" />}
+      />
     </main>
   )
 }

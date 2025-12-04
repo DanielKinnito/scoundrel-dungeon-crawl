@@ -36,13 +36,20 @@ export function HowToPlay({ onBack }: HowToPlayProps) {
           {/* Objective */}
           <section className="bg-card/40 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/40">
             <h2 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">🎯</span> Objective
+              <span className="text-2xl">🎯</span> The Goal
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Survive the dungeon! In <span className="text-primary font-bold">Classic Mode</span>, clear all 54 cards
-              to achieve victory. In <span className="text-accent font-bold">Endless Mode</span>, survive as long as
-              possible and chase the highest score.
-            </p>
+            <div className="space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p>
+                You are a scoundrel exploring a deep, dark dungeon. Your goal is simple: <span className="text-foreground font-bold">Don't Die.</span>
+              </p>
+              <p>
+                The dungeon is represented by a deck of cards. You must clear rooms of cards to progress.
+              </p>
+              <ul className="list-disc list-inside space-y-1 ml-2">
+                <li><span className="text-primary font-bold">Classic Mode:</span> Clear the entire deck (54 cards) to win.</li>
+                <li><span className="text-accent font-bold">Endless Mode:</span> Survive as many rooms as possible for a high score.</li>
+              </ul>
+            </div>
           </section>
 
           {/* Card Types */}

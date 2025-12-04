@@ -10,7 +10,11 @@ import {
     TableRow,
 } from "@/components/ui/table"
 
-export async function Leaderboard() {
+interface LeaderboardProps {
+    mode: "realistic" | "endless"
+}
+
+export async function Leaderboard({ mode }: LeaderboardProps) {
     const scores = await db
         .select({
             name: user.name,
@@ -18,6 +22,7 @@ export async function Leaderboard() {
         })
         .from(leaderboard)
         .innerJoin(user, eq(leaderboard.userId, user.id))
+        .where(eq(leaderboard.mode, mode))
         .orderBy(desc(leaderboard.score))
         .limit(10);
 

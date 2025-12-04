@@ -12,10 +12,11 @@ export type GameMode = "realistic" | "endless"
 export type Screen = "menu" | "game" | "leaderboard" | "howto" | "auth"
 
 interface GameContainerProps {
-    leaderboard: React.ReactNode
+    leaderboardRealistic: React.ReactNode
+    leaderboardEndless: React.ReactNode
 }
 
-export function GameContainer({ leaderboard }: GameContainerProps) {
+export function GameContainer({ leaderboardRealistic, leaderboardEndless }: GameContainerProps) {
     const [screen, setScreen] = useState<Screen>("menu")
     const [gameMode, setGameMode] = useState<GameMode>("realistic")
 
@@ -41,9 +42,11 @@ export function GameContainer({ leaderboard }: GameContainerProps) {
             )}
             {screen === "game" && <GameScreen mode={gameMode} onBackToMenu={() => setScreen("menu")} />}
             {screen === "leaderboard" && (
-                <LeaderboardWrapper onBack={() => setScreen("menu")}>
-                    {leaderboard}
-                </LeaderboardWrapper>
+                <LeaderboardWrapper
+                    onBack={() => setScreen("menu")}
+                    realistic={leaderboardRealistic}
+                    endless={leaderboardEndless}
+                />
             )}
             {screen === "howto" && <HowToPlay onBack={() => setScreen("menu")} />}
             {screen === "auth" && (
@@ -56,7 +59,7 @@ export function GameContainer({ leaderboard }: GameContainerProps) {
                         >
                             Back to Menu
                         </Button>
-                        <AuthButtons />
+                        <AuthButtons onSuccess={() => setScreen("menu")} />
                     </div>
                 </div>
             )}

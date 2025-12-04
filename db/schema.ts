@@ -50,5 +50,6 @@ export const leaderboard = pgTable("leaderboard", {
     id: text("id").primaryKey(),
     userId: text("userId").notNull().references(() => user.id),
     score: integer("score").notNull(),
+    mode: text("mode").notNull().default("realistic"),
     createdAt: timestamp("createdAt").defaultNow().notNull()
 });

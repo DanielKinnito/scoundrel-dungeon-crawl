@@ -16,7 +16,11 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useRouter } from "next/navigation"
 
-export function AuthButtons() {
+interface AuthButtonsProps {
+    onSuccess?: () => void
+}
+
+export function AuthButtons({ onSuccess }: AuthButtonsProps) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
@@ -31,6 +35,7 @@ export function AuthButtons() {
         }, {
             onSuccess: () => {
                 router.refresh()
+                onSuccess?.()
             },
             onError: (ctx) => {
                 alert(ctx.error.message)
@@ -48,6 +53,7 @@ export function AuthButtons() {
         }, {
             onSuccess: () => {
                 router.refresh()
+                onSuccess?.()
             },
             onError: (ctx) => {
                 alert(ctx.error.message)
