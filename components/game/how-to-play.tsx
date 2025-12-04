@@ -110,40 +110,53 @@ export function HowToPlay({ onBack }: HowToPlayProps) {
           {/* Room Rules */}
           <section className="bg-card/40 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/40">
             <h2 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">🚪</span> Rooms
+              <span className="text-2xl">🚪</span> The Dungeon Room
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Each room reveals <span className="text-primary font-bold">4 cards</span>. You must resolve{" "}
-              <span className="text-primary font-bold">3 cards</span> before advancing. The 4th card becomes a{" "}
-              <span className="text-amber-400 font-bold">leftover</span>.
+              You enter a room with <span className="text-primary font-bold">4 cards</span>. You must deal with at least{" "}
+              <span className="text-primary font-bold">3 of them</span> before you can move on. The last card remaining is called the{" "}
+              <span className="text-amber-400 font-bold">Leftover</span>.
             </p>
           </section>
 
           <section className="bg-amber-500/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-amber-500/30">
             <h2 className="text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
-              <ArrowRight className="w-5 h-5" /> Leftover Card Choice
+              <ArrowRight className="w-5 h-5" /> The Leftover Choice
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              When one card remains, you have a choice: <span className="text-amber-400 font-bold">Play it</span> and
-              resolve it immediately, or <span className="text-amber-400 font-bold">Continue</span> to the next room
-              where 3 new cards will be drawn (the leftover is discarded).
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3">
+              When only one card is left, you have a critical decision:
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-foreground min-w-[80px]">Play It:</span>
+                <span>Resolve the card now (fight monster, drink potion, etc.). Then enter a fresh room with 4 new cards.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-foreground min-w-[80px]">Keep It:</span>
+                <span>Don't play it. The card <span className="text-amber-400">stays with you</span> and moves to the next room, where 3 new cards will join it.</span>
+              </li>
+            </ul>
+            <p className="text-xs text-muted-foreground/60 mt-3 italic">
+              Strategy Tip: Keep dangerous monsters for later when you might find a weapon, or save potions for when you're hurt!
             </p>
           </section>
 
           {/* Blood-Staining */}
           <section className="bg-red-500/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-red-500/30">
             <h2 className="text-lg font-bold text-red-400 mb-2 flex items-center gap-2">
-              <Droplet className="w-5 h-5" /> Blood-Staining
+              <Droplet className="w-5 h-5" /> Weapon Durability
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              When you slay a monster with a weapon, it becomes{" "}
-              <span className="text-red-400 font-bold">blood-stained</span>. A bloodied weapon can only defeat monsters
-              of <span className="text-primary font-bold">equal or lesser</span> power than the last monster killed.
+              Weapons don't break, but they get dull. When you kill a monster, your weapon becomes{" "}
+              <span className="text-red-400 font-bold">blood-stained</span>.
             </p>
             <div className="mt-3 p-3 bg-card/30 rounded-lg border border-border/30">
+              <p className="text-sm text-foreground font-medium mb-1">The Rule:</p>
               <p className="text-xs text-muted-foreground">
-                <span className="text-foreground font-bold">Example:</span> Kill a power-7 monster → weapon now maxes at
-                7. Kill a power-3 next → weapon now maxes at 3.
+                You can only kill monsters that are <span className="text-primary font-bold">weaker or equal</span> to the last monster you killed with that weapon.
+              </p>
+              <p className="text-xs text-muted-foreground mt-2">
+                <span className="text-foreground font-bold">Example:</span> If you kill a <span className="text-foreground">Level 7</span> monster, your weapon can now only kill monsters Level 7 or lower. If you then kill a <span className="text-foreground">Level 3</span>, it can only kill Level 3 or lower!
               </p>
             </div>
           </section>
