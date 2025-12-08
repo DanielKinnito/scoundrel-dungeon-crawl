@@ -57,3 +57,8 @@ jspm_packages/
 Thumbs.db
 *.swp
 *.swo
+
+
+.auxilary
+/auxilary
+/auxiliary

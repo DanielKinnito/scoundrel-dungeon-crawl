@@ -59,7 +59,7 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
               >
                 <Flame className="w-8 h-8 sm:w-12 sm:h-12 text-primary" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-foreground">Classic Mode</h3>
+              <h2 className="text-lg sm:text-xl font-bold text-foreground">Classic Mode</h2>
               <p className="text-xs sm:text-sm text-muted-foreground text-center leading-relaxed">
                 52 cards + 2 Merchants. Each card appears once. Conquer the dungeon to win!
               </p>
@@ -86,7 +86,7 @@ export function MainMenu({ onStartGame, onShowLeaderboard, onShowHowTo }: MainMe
               >
                 <Infinity className="w-8 h-8 sm:w-12 sm:h-12 text-accent" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-foreground">Endless Mode</h3>
+              <h2 className="text-lg sm:text-xl font-bold text-foreground">Endless Mode</h2>
               <p className="text-xs sm:text-sm text-muted-foreground text-center leading-relaxed">
                 Infinite cards. Survive as long as possible and chase the highest score!
               </p>
