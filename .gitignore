@@ -58,7 +58,7 @@ Thumbs.db
 *.swp
 *.swo
 
-
+# Auxiliary files
 .auxilary
 /auxilary
 /auxiliary
